@@ -22,6 +22,7 @@ async function authUser(req, res, next) {
             message: "token is invalid"
         })
     }
+    console.log("Cookies:", req.cookies);
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
